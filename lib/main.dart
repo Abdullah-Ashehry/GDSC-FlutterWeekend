@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:myprescription/pages/home_container.dart';
 import './pages/homepage.dart';
+import './pages/login.dart';
+import './pages/verification.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: HomeContainer(),
     );
   }
 }
