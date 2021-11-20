@@ -25,7 +25,7 @@ class _HomeContainerState extends State<HomeContainer> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.add),
+            icon: Icon(Icons.home),
             label: "Home",
           ),
           BottomNavigationBarItem(

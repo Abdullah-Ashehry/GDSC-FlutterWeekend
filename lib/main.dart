@@ -5,6 +5,7 @@ import './pages/login.dart';
 import './pages/verification.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeContainer(),
+      home: LoginPage(),
     );
   }
 }
