@@ -7,14 +7,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 String intamount = '1 Pill';
 
-class addplan extends StatefulWidget {
-  const addplan({Key? key}) : super(key: key);
+class AddPlan extends StatefulWidget {
+  const AddPlan({Key? key}) : super(key: key);
 
   @override
-  _addplanState createState() => _addplanState();
+  _AddPlanState createState() => _AddPlanState();
 }
 
-class _addplanState extends State<addplan> {
+class _AddPlanState extends State<AddPlan> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

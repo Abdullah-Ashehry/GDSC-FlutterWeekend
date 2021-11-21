@@ -2,7 +2,11 @@ import 'package:curved_nav_bar/curved_bar/curved_action_bar.dart';
 import 'package:curved_nav_bar/fab_bar/fab_bottom_app_bar_item.dart';
 import 'package:curved_nav_bar/flutter_curved_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:myprescription/pages/addplan.dart';
 import 'package:myprescription/pages/homepage.dart';
+import 'package:myprescription/pages/login.dart';
+
+GlobalKey globalKey = GlobalKey(debugLabel: 'btm_app_bar');
 
 class HomeContainer extends StatefulWidget {
   @override
@@ -12,17 +16,25 @@ class HomeContainer extends StatefulWidget {
 class _HomeContainerState extends State<HomeContainer> {
   List<Widget> screens = [
     MyHomePage(),
-    Container(
-      child: Text("hi"),
-    ),
+    LoginPage(),
+    Container(),
   ];
 
-  int index = 0;
+  late Widget currentScreen;
 
+  @override
+  void initState() {
+    super.initState();
+
+    currentScreen = screens[0];
+  }
+
+  int index = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        key: globalKey,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -37,13 +49,21 @@ class _HomeContainerState extends State<HomeContainer> {
           setState(() {
             print(value);
             index = value;
+            currentScreen = screens[index];
           });
         },
         currentIndex: index,
       ),
-      body: screens[index],
+      body: currentScreen,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          index = 1;
+
+          currentScreen = screens[index];
+
+          globalKey.currentState!.setState(() {});
+          setState(() {});
+        },
         child: Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

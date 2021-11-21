@@ -40,6 +40,9 @@ dependencies:
   curved_nav_bar: ^0.0.2
   iconsax: ^0.0.8
   flutter_verification_code: ^1.1.0
+  hexcolor: ^2.0.5
+
+  
 
 dev_dependencies:
   flutter_test:
